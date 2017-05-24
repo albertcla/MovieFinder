@@ -34,7 +34,7 @@ aside {
 }
 
 section {
-  flex: 3;
+  flex: 4;
   overflow: auto;
   border: 1px solid #0000FF;
 }
@@ -84,7 +84,7 @@ input[type=search]::placeholder {
 
 input[type=range] {
   -webkit-appearance: none;
-  width: 240px;
+  width: 233px;
   margin: 20px 0;
 }
 
@@ -109,16 +109,20 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 button {
-  width: 58px;
-  height: 12px;
+  width: 113px;
+  height: 29px;
   display: inline-block;
-  padding: 1em;
   text-align: center;
-  color: #5c6269;
+  color: #8e9297;
+  border: 2px solid #E9ECEE;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  margin: 4px 0px 4px 0px;
 }
 
 button:hover {
-  color: #f3644f;
+  color: #2883d8;
+  border-color: #2883d8;
 }
 
 /*Clases*/
@@ -143,13 +147,19 @@ button:hover {
   border: 2px solid;
   border-radius: 10px;
   padding: 1px 10px;
-  margin-right: 50px;
 }
 
 .filter {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.btn-col {
+  display:inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
 }
 
 /*Elementos*/

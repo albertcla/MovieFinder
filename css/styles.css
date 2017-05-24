@@ -1,42 +1,53 @@
 /*Etiquetas*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   margin: 0px;
   padding: 0px;
   font: normal 16px/1em 'Nunito Sans', sans-serif;
   color: #5c6269;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 nav {
-  position: fixed;
+  flex: 0 0 68px;
   display: flex;
-  align-items: center;
-  z-index: 1;
-  width: 100%;
-  height: 68px;
+  justify-content: center;
   background-color: #1B2126;
 }
 
-nav .contenedor {
+nav div.wrapper {
+  align-items: center;
   justify-content: space-between;
 }
 
-main {
-  position: absolute;
+.wrapper {
+  flex: 0 0 1170px;
   display: flex;
-  width: 100%;
-  top: 68px;
+}
+
+main {
+  flex: 1 0 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
 }
 
 aside {
   flex: 1;
-  overflow: auto;
-  border: 1px solid #00FF00;
+  overflow-y: auto;
+  padding-right: 25px;
 }
 
 section {
-  flex: 4;
-  overflow: auto;
-  border: 1px solid #0000FF;
+  flex: 3.5;
+  overflow-y: auto;
 }
 
 h1 {
@@ -126,13 +137,6 @@ button:hover {
 }
 
 /*Clases*/
-.wrapper {
-  width: 1170px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-}
-
 .menu {
   height: 69px;
   line-height: 0.75;

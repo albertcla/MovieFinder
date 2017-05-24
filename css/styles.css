@@ -27,11 +27,6 @@ nav div.wrapper {
   justify-content: space-between;
 }
 
-.wrapper {
-  flex: 0 0 1170px;
-  display: flex;
-}
-
 main {
   flex: 1 0 0;
   display: flex;
@@ -42,12 +37,12 @@ main {
 aside {
   flex: 1;
   overflow-y: auto;
-  padding-right: 25px;
+  padding-right: 20px;
 }
 
 section {
   flex: 3.5;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 h1 {
@@ -137,6 +132,11 @@ button:hover {
 }
 
 /*Clases*/
+.wrapper {
+  flex: 0 0 1170px;
+  display: flex;
+}
+
 .menu {
   height: 69px;
   line-height: 0.75;
@@ -163,7 +163,38 @@ button:hover {
   display:inline-flex;
   flex-direction: column;
   justify-content: space-between;
-  
+}
+
+.preview {
+  display: inline-block;
+  margin: 20px 0px 0px 19px;
+}
+
+.preview img {
+  width: 269px;
+  height: 403px;
+}
+
+.preview:hover {
+  filter: brightness(50%);
+}
+
+.rate {
+  width: 269px;
+  height: 41px;
+  position: absolute;
+  margin: -43px 0px;
+  background-color: rgba(0,0,0,0.7);
+  display: none;
+}
+.preview:hover .rate{
+  display: block;
+}
+
+.tomate {
+  width: 63px;
+  height: 63px;
+  background: url(/img/sprite-rotten.png) 0 0;
 }
 
 /*Elementos*/

@@ -1,40 +1,5 @@
-<div class="preview">
-  <img src="../img/Home-cover.jpg" alt="movie prview" class="peli">
-  <div class="rate">
-    <img class="tomate" src="/img/img_trans.gif">
-  </div>
-</div>
-
-<div class="preview">
-  <img src="../img/Home-cover.jpg" alt="movie prview" class="peli">
-  <div class="rate">
-    <img class="tomate" src="/img/img_trans.gif">
-  </div>
-</div>
-
-<div class="preview">
-  <img src="../img/Home-cover.jpg" alt="movie prview" class="peli">
-  <div class="rate">
-    <img class="tomate" src="/img/img_trans.gif">
-  </div>
-</div>
-
-<div class="preview">
-  <img src="../img/Home-cover.jpg" alt="movie prview" class="peli">
-  <div class="rate">
-    <img class="tomate" src="/img/img_trans.gif">
-  </div>
-</div>
-
-<div class="preview">
-  <img src="../img/Home-cover.jpg" alt="movie prview" class="peli">
-  <div class="rate">
-    <img class="tomate" src="/img/img_trans.gif">
-  </div>
-</div>
-
-<div class="preview">
-  <img src="../img/Home-cover.jpg" alt="movie prview" class="peli">
+<div class="preview" ng-repeat="peli in Discover.pelis">
+  <img src="{{peli.coverPath}}" alt="movie prview" class="cover">
   <div class="rate">
     <img class="tomate" src="/img/img_trans.gif">
   </div>

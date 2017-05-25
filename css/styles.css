@@ -172,7 +172,12 @@ button:hover {
   margin: 11px;
 }
 
-.preview:hover .peli {
+.cover {
+  width: 269px;
+  height: auto;
+}
+
+.preview:hover .cover {
   filter: brightness(50%);
 }
 

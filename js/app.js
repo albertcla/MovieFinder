@@ -32,6 +32,16 @@
       controllerAs: 'ComingSoon',
       templateUrl: '/views/comingsoon.html'
     })
+    .when('/favoritos', {
+      controller: 'FavoritosController',
+      controllerAs: 'Favoritos',
+      templateUrl: '/views/favoritos.html'
+    })
+    .when('/pendientes', {
+      controller: 'PendientesController',
+      controllerAs: 'Pendientes',
+      templateUrl: '/views/pendientes.html'
+    })
     .otherwise({
         redirectTo: '/'
     });

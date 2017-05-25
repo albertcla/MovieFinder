@@ -11,20 +11,18 @@
 
 <body>
 
-  <nav ng-include="'/views/partials/nav.html'">
-  </nav>
+  <nav ng-include="'/views/partials/nav.html'"></nav>
 
   <main>
+   
     <div class="wrapper">
-      <aside ng-include="'/views/partials/sidebar.html'">
-      </aside>
+     
+      <aside ng-include="'/views/partials/sidebar.html'"></aside>
 
-      <section ng-view>
-      </section>
-
+      <section ng-view></section>
+      
     </div>
-    <footer ng-include="'/views/partials/footer.html'">
-    </footer>
+    
   </main>
 
 
@@ -34,11 +32,15 @@
   <!--App-->
   <script src="js/app.js"></script>
   <!--Factorias-->
+  <script src="js/factories/tmdb.factory.js"></script>
   <!--Controladores-->
   <script src="js/controllers/discover.controller.js"></script>
   <script src="js/controllers/lastest.controller.js"></script>
   <script src="js/controllers/toprated.controller.js"></script>
   <script src="js/controllers/comingsoon.controller.js"></script>
+  
+  <script src="js/controllers/favoritos.controller.js"></script>
+  <script src="js/controllers/pendientes.controller.js"></script>
 
   <!--Componentes-->
 

@@ -1,53 +1,46 @@
 <div class="menu">
   <img src="img/Filter_Icon.png" alt="Filter Icon">
-  <a href="#" class="btn">Filtrar</a>
-  <a href="#" class="btn">Borrar</a>
+  <a href="#" class="btn" ng-click="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,genres)">Filtrar</a>
+  <a href="#" class="btn" ng-click="Finder.defaultFilter();">Borrar</a>
 </div>
 <div>
   <div class="filter">
     <b>Año</b>
-    <p class="range">1900 - <span id="range-year"></span></p>
+    <p class="range">1900 - {{Finder.dateMax}}</p>
   </div>
-  <input type="range" id="year" min="1900" max="2017" value="2000">
+  <input type="range" id="year" min="1900" max="2017" value="2017" ng-model="Finder.dateMax" ng-model-options="{ debounce: 1000 }" ng-change="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,genres)">
   <div class="filter">
-    <b>Valoración IMDB</b>
-    <p class="range">0 - <span id="range-imdb"></span></p>
+    <b>Valoración TMDb</b>
+    <p class="range">0 - {{Finder.valMax}}</p>
   </div>
-  <input type="range" id="imdb" min="0" max="9" value="5">
-  <div class="filter">
-    <b>Rotten Tomatoes - CS</b>
-    <p class="range">0 - <span id="range-cs"></span></p>
-  </div>
-  <input type="range" id="cs" value="50">
-  <div class="filter">
-    <b>Rotten Tomatoes - AS</b>
-    <p class="range">0 - <span id="range-as"></span></p>
-  </div>
-  <input type="range" id="as" value="50">
+  <input type="range" id="imdb" min="0" max="9" value="9" ng-model="Finder.valMax" ng-model-options="{ debounce: 1000 }" ng-change="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,genres)">
+  
+  <p><img src="/img/adult_.png" alt="adults_logo"><input type="checkbox" checked ng-model="Finder.adult" ng-change="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,genres)"></p>
+  
   <p><b>Géneros</b></p>
   <div class="filter">
     <div class="btn-col">
-      <button>Acción</button>
-      <button>Animación</button>
-      <button>Crimen</button>
-      <button>Drama</button>
-      <button>Fantasía</button>
-      <button>Horror</button>
-      <button>Misterio</button>
-      <button>Ficción</button>
-      <button>Thriller</button>
-      <button>Western</button>
+      <button ng-class="{active: Finder.genres.indexOf('28') != -1}" ng-click="Finder.idToggle('28')">Acción</button>
+      <button ng-class="{active: Finder.genres.indexOf('16') != -1}" ng-click="Finder.idToggle('16')">Animación</button>
+      <button ng-class="{active: Finder.genres.indexOf('80') != -1}" ng-click="Finder.idToggle('80')">Crimen</button>
+      <button ng-class="{active: Finder.genres.indexOf('18') != -1}" ng-click="Finder.idToggle('18')">Drama</button>
+      <button ng-class="{active: Finder.genres.indexOf('14') != -1}" ng-click="Finder.idToggle('14')">Fantasía</button>
+      <button ng-class="{active: Finder.genres.indexOf('27') != -1}" ng-click="Finder.idToggle('27')">Horror</button>
+      <button ng-class="{active: Finder.genres.indexOf('9648') != -1}" ng-click="Finder.idToggle('9648')">Misterio</button>
+      <button ng-class="{active: Finder.genres.indexOf('878') != -1}" ng-click="Finder.idToggle('878')">Ficción</button>
+      <button ng-class="{active: Finder.genres.indexOf('53') != -1}" ng-click="Finder.idToggle('53')">Thriller</button>
+      <button ng-class="{active: Finder.genres.indexOf('37') != -1}" ng-click="Finder.idToggle('37')">Western</button>
     </div>
     <div class="btn-col">
-      <button>Aventura</button>
-      <button>Comedia</button>
-      <button>Documental</button>
-      <button>Familiar</button>
-      <button>Históricas</button>
-      <button>Música</button>
-      <button>Romance</button>
-      <button>TV Movies</button>
-      <button>Guerra</button>
+      <button ng-class="{active: Finder.genres.indexOf('12') != -1}" ng-click="Finder.idToggle('12')">Aventura</button>
+      <button ng-class="{active: Finder.genres.indexOf('35') != -1}" ng-click="Finder.idToggle('35')">Comedia</button>
+      <button ng-class="{active: Finder.genres.indexOf('99') != -1}" ng-click="Finder.idToggle('99')">Documental</button>
+      <button ng-class="{active: Finder.genres.indexOf('10751') != -1}" ng-click="Finder.idToggle('10751')">Familiar</button>
+      <button ng-class="{active: Finder.genres.indexOf('36') != -1}" ng-click="Finder.idToggle('36')">Históricas</button>
+      <button ng-class="{active: Finder.genres.indexOf('10402') != -1}" ng-click="Finder.idToggle('10402')">Música</button>
+      <button ng-class="{active: Finder.genres.indexOf('10749') != -1}" ng-click="Finder.idToggle('10749')">Romance</button>
+      <button ng-class="{active: Finder.genres.indexOf('10770') != -1}" ng-click="Finder.idToggle('10770')">TV Movies</button>
+      <button ng-class="{active: Finder.genres.indexOf('10752') != -1}" ng-click="Finder.idToggle('10752')">Guerra</button>
       <button>Pornografía</button>
     </div>
   </div>

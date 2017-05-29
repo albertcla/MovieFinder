@@ -19,7 +19,7 @@
 
     ////////////////
 
-    function getPack() {
+    function getPack(dateMax,valMax,adult, genres) {
       
       var urlAPI = 'https://api.themoviedb.org/3';
       var typeSearch = '/discover';
@@ -27,16 +27,21 @@
       var KeyAPI = '?api_key=fcd3e5faa403e363c9efd02c164b0679';
       var lang = '&language=en-US';
       var sort = '&sort_by=popularity.desc';
-      var includeAdult = '&include_adult=true';
+      var includeAdult = '&include_adult=' + adult;
       var includeVideo = '&include_video=false';
       var page = '&page=' + 1;
-      var DateStart = '&primary_release_date.gte=1990';
-      var DateEnd = '&primary_release_date.lte=2000';
+      var DateStart = '&primary_release_date.gte=1900';
+      var DateEnd = '&primary_release_date.lte=' + dateMax;
       var voteStart = '&vote_average.gte=1';
-      var voteEnd = '&vote_average.lte=4';
-      var genere = '&with_genres=comedy';
+      var voteEnd = '&vote_average.lte=' + valMax;
+      if (genres == undefined) {
+        var genre = '';
+      } else {
+        genres = genres.toString().replace(',','%2C');
+        var genre = '&with_genres=' + genres;
+      }
       
-      var urlGetPack = urlAPI + typeSearch + format + KeyAPI;
+      var urlGetPack = urlAPI + typeSearch + format + KeyAPI + includeAdult + DateEnd + voteEnd +genre;
       
 //      var urlGetPack = urlAPI + typeSearch + format + KeyAPI + lang + sort + includeAdult + includeVideo + page + DateStart + DateEnd + voteStart + voteEnd + genere; 
       

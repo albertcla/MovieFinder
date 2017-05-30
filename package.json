@@ -1,0 +1,13 @@
+{
+  "name": "MovieFinder",
+  "version": "1.0.0",
+  "description": "Find ranks and info about films",
+  "main": "index.js",
+  "repository": "https://github.com/albertcla/MovieFinder.git",
+  "author": "tucho-lenovo <albert.cla@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4"
+  }
+}

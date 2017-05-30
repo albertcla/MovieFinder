@@ -42,6 +42,11 @@
       controllerAs: 'Pendientes',
       templateUrl: '/views/pendientes.html'
     })
+    .when('/movie/:idSingle', {
+      controller: 'SingleController',
+      controllerAs: 'Single',
+      templateUrl: '/views/single.html'
+    })
     .otherwise({
         redirectTo: '/'
     });

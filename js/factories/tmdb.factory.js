@@ -10,7 +10,8 @@
   function  TMDbFactory($http){
     var exports = {
       getPack: getPack,
-      getMovie: getMovie
+      getMovie: getMovie,
+      getDetails: getDetails
     };
     
 //    var type = '/discover';
@@ -119,5 +120,21 @@
             console.log(error);
           })
     }
+    
+    function getDetails(id) {
+      var urlAPI = 'https://api.themoviedb.org/3';
+      var format = '/movie/';
+      var movieId = id;
+      var KeyAPI = '?api_key=fcd3e5faa403e363c9efd02c164b0679';
+      var urldetails = urlAPI + format + movieId + KeyAPI;
+      return $http.get(urldetails)
+        .then(function (response) {
+            var result = {
+              id: response.data.id,
+              cover: response.data.poster_path
+            }
+            return result;
+          }
+    )}
   }
 })();

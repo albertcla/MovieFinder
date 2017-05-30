@@ -38,6 +38,7 @@
         .then(function (result) {
           vm.total = result.total;
           vm.pelis = result.pelis;
+          vm.query = '';
       },
       function (error) {
         console.log('Ha habido un error al buscar la Peli');

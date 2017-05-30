@@ -11,7 +11,7 @@
   <input type="range" id="year" min="1900" max="2017" value="2017" ng-model="Finder.dateMax" ng-model-options="{ debounce: 1000 }" ng-change="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres)">
   <div class="filter">
     <b>Valoración TMDb</b>
-    <p class="range">0 - {{Finder.valMax}}</p>
+    <p class="range">1 - {{Finder.valMax + 1}}</p>
   </div>
   <input type="range" id="imdb" min="0" max="9" value="9" ng-model="Finder.valMax" ng-model-options="{ debounce: 1000 }" ng-change="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres)">
   <div class="filter">

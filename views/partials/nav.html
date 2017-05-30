@@ -6,13 +6,13 @@
   </ul>
   <span>|</span>
   <ul class="contenedor">
-    <li><a href="/">Discover</a></li>
+    <li><a href="/" ng-click="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult);">Discover</a></li>
     <li><a href="/lastest">Últimas Pelis</a></li>
     <li><a href="/toprated">Top Rated</a></li>
     <li><a href="/comingsoon">Próximamente</a></li>
   </ul>
   <div id="search">
-    <img src="img/Search_Icon.png" alt="Lupa">
-    <input type="search" name="film-search" placeholder="Encuentra tu película favorita" autocomplete="on">
+    <a href="#"><img src="img/Search_Icon.png" alt="Lupa" ng-click="Finder.searchMovie(Finder.query,Finder.adult)"></a>
+    <input type="search" name="film-search" placeholder="Encuentra tu película favorita" ng-model="Finder.query">
   </div>
 </div>

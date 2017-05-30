@@ -1,6 +1,6 @@
 <div class="menu">
   <img src="img/Filter_Icon.png" alt="Filter Icon">
-  <a href="#" class="btn" ng-click="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,genres)">Filtrar</a>
+  <a href="#" class="btn" ng-click="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres)">Filtrar</a>
   <a href="#" class="btn" ng-click="Finder.defaultFilter();">Borrar</a>
 </div>
 <div>
@@ -8,14 +8,17 @@
     <b>Año</b>
     <p class="range">1900 - {{Finder.dateMax}}</p>
   </div>
-  <input type="range" id="year" min="1900" max="2017" value="2017" ng-model="Finder.dateMax" ng-model-options="{ debounce: 1000 }" ng-change="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,genres)">
+  <input type="range" id="year" min="1900" max="2017" value="2017" ng-model="Finder.dateMax" ng-model-options="{ debounce: 1000 }" ng-change="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres)">
   <div class="filter">
     <b>Valoración TMDb</b>
     <p class="range">0 - {{Finder.valMax}}</p>
   </div>
-  <input type="range" id="imdb" min="0" max="9" value="9" ng-model="Finder.valMax" ng-model-options="{ debounce: 1000 }" ng-change="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,genres)">
+  <input type="range" id="imdb" min="0" max="9" value="9" ng-model="Finder.valMax" ng-model-options="{ debounce: 1000 }" ng-change="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres)">
+  <div class="filter">
+    <b>Incluir Adultos</b>
+    <p><img src="/img/adult_.png" alt="adults_logo"><input type="checkbox" checked ng-model="Finder.adult" ng-change="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres)"></p>
+  </div>
   
-  <p><img src="/img/adult_.png" alt="adults_logo"><input type="checkbox" checked ng-model="Finder.adult" ng-change="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,genres)"></p>
   
   <p><b>Géneros</b></p>
   <div class="filter">

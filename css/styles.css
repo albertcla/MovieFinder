@@ -38,15 +38,16 @@ aside {
   flex: 1;
   overflow-y: auto;
   padding-right: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 section {
   flex: 3.5;
-  overflow-y: auto;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
 }
+
 
 h1 {
   display: none;
@@ -149,11 +150,23 @@ button:hover {
 }
 
 .menu {
+  flex: 0 0 50px;
   height: 69px;
   line-height: 0.75;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.menu span {
+  margin-left: 20px;
+}
+
+.results {
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .range {
@@ -195,7 +208,14 @@ button:hover {
   height: 41px;
   position: relative;
   margin: -43px 0px;
+  text-align: center;
   background-color: rgba(0,0,0,0.7);
+}
+
+.rate span {
+  color: #ffffff;
+  position: relative;
+  top: 10px;
 }
 
 .preview:hover .rate{

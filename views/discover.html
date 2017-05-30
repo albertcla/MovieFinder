@@ -1,6 +1,11 @@
-<div class="preview" ng-repeat="peli in Finder.pelis track by peli.id">
-  <img src="{{peli.coverPath}}" alt="movie prview" class="cover">
-  <div class="rate">
-    <img class="tomate" src="/img/img_trans.gif">
+<div class="menu">
+  <span><b>{{Finder.total.results}}</b> películas encontradas</span>
+</div>
+<div class="results">
+  <div class="preview" ng-repeat="peli in Finder.pelis track by peli.id">
+    <img src="{{peli.coverPath}}" alt="movie prview" class="cover">
+    <div class="rate">
+      <span><i class="fa fa-star-o" aria-hidden="true"></i> {{peli.voteAvg}} / <i class="fa fa-users" aria-hidden="true"></i> {{peli.voteCnt}}</span>
+    </div>
   </div>
 </div>

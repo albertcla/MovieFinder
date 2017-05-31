@@ -7,22 +7,22 @@
   TMDbFactory.$inject = ['$http'];
 
   /* @ngInject */
-  function  TMDbFactory($http){
+  function TMDbFactory($http) {
     var exports = {
       getPack: getPack,
       getMovie: getMovie,
       getDetails: getDetails
     };
-    
-//    var type = '/discover';
-//    var format = '/movie';
-//    var adult = '&include_adult=true';
+
+    //    var type = '/discover';
+    //    var format = '/movie';
+    //    var adult = '&include_adult=true';
     return exports;
 
     ////////////////
 
-    function getPack(dateMax,valMax,adult,genres) {
-      
+    function getPack(dateMax, valMax, adult, genres) {
+
       var urlAPI = 'https://api.themoviedb.org/3';
       var typeSearch = '/discover';
       var format = '/movie';
@@ -39,14 +39,14 @@
       if (genres == undefined) {
         var genre = '';
       } else {
-        genres = genres.toString().replace(',','%2C');
+        genres = genres.toString().replace(',', '%2C');
         var genre = '&with_genres=' + genres;
       }
-      
+
       var urlGetPack = urlAPI + typeSearch + format + KeyAPI + includeAdult + DateEnd + voteEnd + genre;
-      
-//      var urlGetPack = urlAPI + typeSearch + format + KeyAPI + lang + sort + includeAdult + includeVideo + page + DateStart + DateEnd + voteStart + voteEnd + genere; 
-      
+
+      //      var urlGetPack = urlAPI + typeSearch + format + KeyAPI + lang + sort + includeAdult + includeVideo + page + DateStart + DateEnd + voteStart + voteEnd + genere; 
+
       return $http.get(urlGetPack)
         .then(function (response) {
             var result = {
@@ -77,7 +77,7 @@
             console.log(error);
           })
     }
-    
+
     function getMovie(query, adult) {
       var urlAPI = 'https://api.themoviedb.org/3';
       var typeSearch = '/search';
@@ -87,9 +87,9 @@
       var q = '&query=' + query;
       var page = '&page=1';
       var includeAdult = '&include_adult=' + adult;
-      
+
       var urlsearch = urlAPI + typeSearch + format + KeyAPI + lang + q + page + includeAdult;
-      
+
       return $http.get(urlsearch)
         .then(function (response) {
             var result = {
@@ -120,7 +120,7 @@
             console.log(error);
           })
     }
-    
+
     function getDetails(id) {
       var urlAPI = 'https://api.themoviedb.org/3';
       var format = '/movie/';
@@ -129,12 +129,25 @@
       var urldetails = urlAPI + format + movieId + KeyAPI;
       return $http.get(urldetails)
         .then(function (response) {
-            var result = {
-              id: response.data.id,
-              cover: response.data.poster_path
-            }
-            return result;
+          var cover = '';
+          if (response.data.poster_path == null) {
+            cover = 'http://placehold.it/269x403';
+          } else {
+            cover = 'https://image.tmdb.org/t/p' + '/w342/' + response.data.poster_path;
           }
-    )}
+          var date = response.data.release_date.slice(0,4);
+          var duration = Math.floor(response.data.runtime/60) + 'h' + (response.data.runtime - Math.floor(response.data.runtime/60)*60) + 'm';
+          var result = {
+            id: response.data.id,
+            cover: cover,
+            title: response.data.original_title,
+            abstract: response.data.overview,
+            genre: response.data.genres,
+            date: date,
+            duration: duration
+          }
+          return result;
+        })
+    }
   }
 })();

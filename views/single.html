@@ -1,6 +1,19 @@
-<div class="modal">
-  <div>
-    <span class="close">&times;</span>
-    <p>{{Single.details.id}}</p>
+<div class="modal" ng-if="Finder.flag">
+  <div class="details">
+    <div>
+      <h2>{{Single.details.title}}</h2>
+      <span>{{Single.details.date}}</span>
+      <span class="close" ng-click="Finder.singleFlag()">&times;</span>
+    </div>
+    <div class="description">
+      <img class="cover" src="{{Single.details.cover}}">
+      <div>
+        <h3>Sinopsis</h3><span>{{Single.details.duration}}</span>
+        <p>{{Single.details.abstract}}</p>
+      </div>
+    </div>
   </div>
 </div>
+
+
+

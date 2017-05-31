@@ -3,7 +3,7 @@
 </div>
 <div class="results">
   <div class="preview" ng-repeat="peli in Finder.pelis track by peli.id">
-    <a href="/movie/{{peli.id}}"><img src="{{peli.coverPath}}" alt="movie prview" class="cover"></a>
+    <a href="/movie/{{peli.id}}"><img src="{{peli.coverPath}}" alt="movie prview" class="cover" ng-click="Finder.singleFlag()"></a>
     <div class="rate">
       <span><i class="fa fa-star-o" aria-hidden="true"></i> {{peli.voteAvg}} / <i class="fa fa-users" aria-hidden="true"></i> {{peli.voteCnt}}</span>
     </div>

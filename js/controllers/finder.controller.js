@@ -14,8 +14,10 @@
     vm.searchMovie = searchMovie;
     vm.searchTMDb = searchTMDb;
     vm.idToggle = idToggle;
+    vm.singleFlag = singleFlag;
     
     vm.genres = [];
+    vm.flag = false;
 
     activate();
 
@@ -64,6 +66,10 @@
       } else {
         vm.genres.splice(vm.genres.indexOf(id),1);
       }
+    }
+    
+    function singleFlag() {
+      vm.flag = !vm.flag;
     }
   }
 })();

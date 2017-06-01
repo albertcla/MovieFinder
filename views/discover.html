@@ -1,11 +1,46 @@
-<div class="menu">
+<div class="menu row spc-bt">
   <span><b>{{Finder.total.results}}</b> películas encontradas</span>
 </div>
-<div class="results">
+
+<div class="results row">
   <div class="preview" ng-repeat="peli in Finder.pelis track by peli.id">
-    <a href="/movie/{{peli.id}}"><img src="{{peli.coverPath}}" alt="movie prview" class="cover" ng-click="Finder.singleFlag()"></a>
+    <a href="#"><img src="{{peli.coverPath}}" alt="movie prview" class="cover" ng-click="Finder.searchDetails(peli.id)"></a>
     <div class="rate">
       <span><i class="fa fa-star-o" aria-hidden="true"></i> {{peli.voteAvg}} / <i class="fa fa-users" aria-hidden="true"></i> {{peli.voteCnt}}</span>
+    </div>
+  </div>
+  <div class="plus" ng-click="Finder.nextPage()" ng-if="Finder.page < Finder.total.pages"><a href="#"><img src="/img/img_trans.gif" alt="Plus"></a></div>
+</div>
+
+<div class="modal" ng-if="Finder.singleFlag">
+  <div class="details col">
+    <div class="row spc-bt">
+      <div>
+        <h2>{{Finder.details.title}}</h2>
+        <span>{{Finder.details.date}}</span>
+      </div>
+      <span class="close" ng-click="Finder.changeFlag('singleFlag')">&times;</span>
+    </div>
+    <div class="description col spc-bt">
+      <div class="row">
+        <img class="cover" src="{{Finder.details.cover}}">
+        <div class="col">
+          <div class="row spc-bt">
+            <h3>Sinopsis</h3><span>{{Finder.details.duration}}</span>
+          </div>
+          <div class="row spc-bt">
+            <div><button ng-repeat="genre in Finder.details.genre track by $index">{{genre.name}}</button></div>
+            <div class="row">
+              <span><i class="fa fa-star-o" aria-hidden="true"></i> {{Finder.details.voteAvg}}</span>
+              <img src="/img/img_trans.gif" alt="Rotten-Tomatoes" class="tomate"><span>{{Finder.details.voteAvg}}</span>
+              <img src="/img/img_trans.gif" alt="Rotten-Cotufas" class="cotufa"><span>{{Finder.details.voteAvg}}</span>
+            </div>
+          </div>
+          <p>{{Finder.details.abstract}}</p>
+          <h3>Trailer</h3>
+        </div>
+      </div>
+      <b>Subs:</b>
     </div>
   </div>
 </div>

@@ -13,39 +13,9 @@
       redirectTo: '/discover'
     })
     .when('/discover', {
-      controller: 'DiscoverController',
+      controller: 'FinderController',
       controllerAs: 'Discover',
       templateUrl: '/views/discover.html'
-    })
-    .when('/lastest', {
-      controller: 'LastestController',
-      controllerAs: 'Lastest',
-      templateUrl: '/views/lastest.html'
-    })
-    .when('/toprated', {
-      controller: 'TopRatedController',
-      controllerAs: 'TopRated',
-      templateUrl: '/views/toprated.html'
-    })
-    .when('/comingsoon', {
-      controller: 'ComingSoonController',
-      controllerAs: 'ComingSoon',
-      templateUrl: '/views/comingsoon.html'
-    })
-    .when('/favoritos', {
-      controller: 'FavoritosController',
-      controllerAs: 'Favoritos',
-      templateUrl: '/views/favoritos.html'
-    })
-    .when('/pendientes', {
-      controller: 'PendientesController',
-      controllerAs: 'Pendientes',
-      templateUrl: '/views/pendientes.html'
-    })
-    .when('/movie/:idSingle', {
-      controller: 'SingleController',
-      controllerAs: 'Single',
-      templateUrl: '/views/single.html'
     })
     .otherwise({
         redirectTo: '/'

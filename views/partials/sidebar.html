@@ -1,28 +1,28 @@
-<div class="menu">
+<div class="menu row spc-bt">
   <img src="img/Filter_Icon.png" alt="Filter Icon">
-  <a href="#" class="btn" ng-click="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres)">Filtrar</a>
+  <a href="#" class="btn" ng-click="Finder.searchPack(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres,Finder.page)">Filtrar</a>
   <a href="#" class="btn" ng-click="Finder.defaultFilter();">Borrar</a>
 </div>
 <div>
-  <div class="filter">
+  <div class="filter row spc-bt">
     <b>Año</b>
     <p class="range">1900 - {{Finder.dateMax}}</p>
   </div>
-  <input type="range" id="year" min="1900" max="2017" value="2017" ng-model="Finder.dateMax" ng-model-options="{ debounce: 1000 }" ng-change="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres)">
-  <div class="filter">
+  <input type="range" id="year" min="1900" max="2017" value="2017" ng-model="Finder.dateMax" ng-model-options="{ debounce: 1000 }" ng-change="Finder.searchPack(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres,Finder.page)">
+  <div class="filter row spc-bt">
     <b>Valoración TMDb</b>
     <p class="range">1 - {{Finder.valMax + 1}}</p>
   </div>
-  <input type="range" id="imdb" min="0" max="9" value="9" ng-model="Finder.valMax" ng-model-options="{ debounce: 1000 }" ng-change="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres)">
-  <div class="filter">
+  <input type="range" id="imdb" min="0" max="9" value="9" ng-model="Finder.valMax" ng-model-options="{ debounce: 1000 }" ng-change="Finder.searchPack(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres,Finder.page)">
+  <div class="filter row spc-bt">
     <b>Incluir Adultos</b>
-    <p><img src="/img/adult_.png" alt="adults_logo"><input type="checkbox" checked ng-model="Finder.adult" ng-change="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres)"></p>
+    <p><img src="/img/adult_.png" alt="adults_logo"><input type="checkbox" checked ng-model="Finder.adult" ng-change="Finder.searchPack(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres,Finder.page)"></p>
   </div>
   
   
   <p><b>Géneros</b></p>
-  <div class="filter">
-    <div class="btn-col">
+  <div class="filter row spc-bt">
+    <div class="btn-col spc-bt">
       <button ng-class="{active: Finder.genres.indexOf('28') != -1}" ng-click="Finder.idToggle('28')">Acción</button>
       <button ng-class="{active: Finder.genres.indexOf('16') != -1}" ng-click="Finder.idToggle('16')">Animación</button>
       <button ng-class="{active: Finder.genres.indexOf('80') != -1}" ng-click="Finder.idToggle('80')">Crimen</button>
@@ -34,7 +34,7 @@
       <button ng-class="{active: Finder.genres.indexOf('53') != -1}" ng-click="Finder.idToggle('53')">Thriller</button>
       <button ng-class="{active: Finder.genres.indexOf('37') != -1}" ng-click="Finder.idToggle('37')">Western</button>
     </div>
-    <div class="btn-col">
+    <div class="btn-col spc-bt">
       <button ng-class="{active: Finder.genres.indexOf('12') != -1}" ng-click="Finder.idToggle('12')">Aventura</button>
       <button ng-class="{active: Finder.genres.indexOf('35') != -1}" ng-click="Finder.idToggle('35')">Comedia</button>
       <button ng-class="{active: Finder.genres.indexOf('99') != -1}" ng-click="Finder.idToggle('99')">Documental</button>

@@ -10,26 +10,21 @@ body {
   padding: 0px;
   font: normal 16px/1em 'Nunito Sans', sans-serif;
   color: #5c6269;
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
 }
 
 nav {
   flex: 0 0 68px;
-  display: flex;
   justify-content: center;
   background-color: #1B2126;
 }
 
 nav div.wrapper {
   align-items: center;
-  justify-content: space-between;
 }
 
 main {
   flex: 1 0 0;
-  display: flex;
   justify-content: center;
   overflow: hidden;
 }
@@ -38,14 +33,10 @@ aside {
   flex: 1;
   overflow-y: auto;
   padding-right: 20px;
-  display: flex;
-  flex-direction: column;
 }
 
 section {
   flex: 3.5;
-  display: flex;
-  flex-direction: column;
 }
 
 
@@ -146,16 +137,27 @@ button:hover {
 /*Clases*/
 .wrapper {
   flex: 0 0 1170px;
+}
+
+.row {
   display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.spc-bt {
+  justify-content: space-between;
 }
 
 .menu {
   flex: 0 0 50px;
   height: 69px;
   line-height: 0.75;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .menu span {
@@ -164,9 +166,8 @@ button:hover {
 
 .results {
   overflow-y: auto;
-  display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .range {
@@ -178,15 +179,12 @@ button:hover {
 }
 
 .filter {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
 .btn-col {
   display:inline-flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .preview {
@@ -196,11 +194,30 @@ button:hover {
 .cover {
   display: inline-block;
   width: 269px;
-  height: auto;
+  height: 403px;
 }
 
 .preview:hover .cover {
   filter: brightness(50%);
+}
+
+.plus {
+  width: 269px;
+  height: 403px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.plus img {
+  position: relative;
+  width: 50px;
+  height: 49px;
+  top: 2px;
+  left: 5px;
+  right: 5px;
+  background: url(/img/rt-icons.png) -70px -71px;
 }
 
 .rate {
@@ -270,18 +287,33 @@ button:hover {
   padding: 16px 0px 16px 0px;
 }
 
-.description div {
+.description > div {
+  align-items: flex-start;
+}
+
+.description div.col {
   display: inline-block;
+  margin-left: 20px;
 }
 
 .tomate {
   position: relative;
-  width: 23px;
-  height: 24px;
-  top: 6px;
-  left: 105px;
-  background: url(/img/rt-icons.png) -288px -48px;
-/*  background: url(/img/rt-icons.png) 288px 48px;*/
+  width: 12px;
+  height: 12px;
+  top: 2px;
+  left: 5px;
+  right: 5px;
+  background: url(/img/rt-icons.png) -258px -146px;
+}
+
+.cotufa {
+  position: relative;
+  width: 12px;
+  height: 14px;
+  top: 2px;
+  left: 5px;
+  right: 5px;
+  background: url(/img/rt-icons.png) -290px -145px;
 }
 
 /*Elementos*/

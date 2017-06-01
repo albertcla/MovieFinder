@@ -12,17 +12,17 @@
   <base href="/">
 </head>
 
-<body ng-controller="FinderController as Finder">
+<body class="col" ng-controller="FinderController as Finder">
 
-  <nav ng-include="'/views/partials/nav.html'"></nav>
+  <nav class="row" ng-include="'/views/partials/nav.html'"></nav>
 
-  <main>
+  <main class="row">
    
-    <div class="wrapper">
+    <div class="wrapper row">
      
-      <aside ng-include="'/views/partials/sidebar.html'"></aside>
+      <aside class="col" ng-include="'/views/partials/sidebar.html'"></aside>
 
-      <section ng-view></section>
+      <section class="col" ng-view></section>
       
     </div>
     
@@ -43,17 +43,6 @@
   <script src="js/factories/tmdb.factory.js"></script>
   <!--Controladores-->
   <script src="js/controllers/finder.controller.js"></script>
-  
-  <script src="js/controllers/discover.controller.js"></script>
-  <script src="js/controllers/single.controller.js"></script>
-  
-  
-  <script src="js/controllers/lastest.controller.js"></script>
-  <script src="js/controllers/toprated.controller.js"></script>
-  <script src="js/controllers/comingsoon.controller.js"></script>
-  
-  <script src="js/controllers/favoritos.controller.js"></script>
-  <script src="js/controllers/pendientes.controller.js"></script>
 
 </body>
 </html>

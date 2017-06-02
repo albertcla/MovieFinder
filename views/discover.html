@@ -9,7 +9,7 @@
       <span><i class="fa fa-star-o" aria-hidden="true"></i> {{peli.voteAvg}} / <i class="fa fa-users" aria-hidden="true"></i> {{peli.voteCnt}}</span>
     </div>
   </div>
-  <div class="plus" ng-click="Finder.nextPage()" ng-if="Finder.page < Finder.total.pages"><a href="#"><img src="/img/img_trans.gif" alt="Plus"></a></div>
+  <div class="plus" ng-click="Finder.nextPage(Finder.type)" ng-if="Finder.page < Finder.total.pages"><a href="#"><img src="/img/img_trans.gif" alt="Plus"></a></div>
 </div>
 
 <div class="modal" ng-if="Finder.singleFlag">

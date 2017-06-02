@@ -1,17 +1,17 @@
 <div class="wrapper row spc-bt">
   <a href="/"><img id="logo" src="img/logo.png" alt="Logo"></a>
   <ul class="contenedor">
-    <li><a href="/favoritos">Favoritos</a></li>
-    <li><a href="/pendientes">Pendientes</a></li>
+    <li><a href="#" ng-class="{active: Finder.type == 'favoritos'}">Favoritos</a></li>
+    <li><a href="#" ng-class="{active: Finder.type == 'pendientes'}">Pendientes</a></li>
   </ul>
   <span>|</span>
   <ul class="contenedor">
-    <li><a href="/" ng-click="Finder.searchTMDb(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres,Finder.page);">Discover</a></li>
-    <li><a href="/#" ng-click="Finder.searchLatest(Finder.page)">Última Peli</a></li>
-    <li><a href="/comingsoon" ng-click="Finder.searchUpcoming(Finder.page)">Próximamente</a></li>
+    <li><a href="#" ng-click="Finder.searchPack(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres,Finder.page)" ng-class="{active: Finder.type == 'discover'}">Discover</a></li>
+    <li><a href="#" ng-click="Finder.searchLatest(Finder.page)" ng-class="{active: Finder.type == 'latest'}">Últimas Pelis</a></li>
+    <li><a href="#" ng-click="Finder.searchUpcoming(Finder.page)" ng-class="{active: Finder.type == 'upcoming'}">Próximamente</a></li>
   </ul>
   <div id="search">
-    <a href="#"><img src="img/Search_Icon.png" alt="Lupa" ng-click="Finder.searchMovie(Finder.query,Finder.adult)"></a>
+    <a href="#"><img src="img/Search_Icon.png" alt="Lupa" ng-click="Finder.searchMovies(Finder.query,Finder.adult)"></a>
     <input type="search" name="film-search" placeholder="Encuentra tu película favorita" ng-model="Finder.query">
   </div>
 </div>

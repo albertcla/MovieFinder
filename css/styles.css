@@ -149,6 +149,10 @@ button:hover {
   flex-direction: column;
 }
 
+.spc-ar {
+  justify-content: space-around;
+}
+
 .spc-bt {
   justify-content: space-between;
 }
@@ -226,18 +230,18 @@ button:hover {
   height: 41px;
   position: relative;
   margin: -43px 0px;
-  text-align: center;
+  align-items: center;
   background-color: rgba(0,0,0,0.7);
 }
 
 .rate span {
   color: #ffffff;
-  position: relative;
-  top: 10px;
+  /*position: relative;
+  top: 10px;*/
 }
 
 .preview:hover .rate{
-  display: block;
+  display: flex;
 }
 
 .modal {

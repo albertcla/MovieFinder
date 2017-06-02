@@ -5,11 +5,15 @@
 <div class="results row">
   <div class="preview" ng-repeat="peli in Finder.pelis track by peli.id">
     <a href="#"><img src="{{peli.coverPath}}" alt="movie prview" class="cover" ng-click="Finder.searchDetails(peli.id)"></a>
-    <div class="rate">
+    <div class="rate spc-ar">
+      <span><i class="fa fa-heart" aria-hidden="true"></i></span>
       <span><i class="fa fa-star-o" aria-hidden="true"></i> {{peli.voteAvg}} / <i class="fa fa-users" aria-hidden="true"></i> {{peli.voteCnt}}</span>
+      <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
     </div>
   </div>
-  <div class="plus" ng-click="Finder.nextPage(Finder.type)" ng-if="Finder.page < Finder.total.pages"><a href="#"><img src="/img/img_trans.gif" alt="Plus"></a></div>
+  <div class="plus" ng-click="Finder.nextPage(Finder.type)" ng-if="Finder.page < Finder.total.pages">
+    <a href="#"><img src="/img/img_trans.gif" alt="Plus"></a>
+  </div>
 </div>
 
 <div class="modal" ng-if="Finder.singleFlag">

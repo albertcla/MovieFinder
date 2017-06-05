@@ -36,8 +36,8 @@
             <div><button ng-repeat="genre in Finder.details.genre track by $index">{{genre.name}}</button></div>
             <div class="row">
               <span><i class="fa fa-star-o" aria-hidden="true"></i> {{Finder.details.voteAvg}}</span>
-              <img src="/img/img_trans.gif" alt="Rotten-Tomatoes" class="tomate"><span>{{Finder.details.voteAvg}}</span>
-              <img src="/img/img_trans.gif" alt="Rotten-Cotufas" class="cotufa"><span>{{Finder.details.voteAvg}}</span>
+              <div class="tomate"></div><span>{{Finder.details.voteAvg}}</span>
+              <div class="cotufa"></div><span>{{Finder.details.voteAvg}}</span>
             </div>
           </div>
           <p>{{Finder.details.abstract}}</p>

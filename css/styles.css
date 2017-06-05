@@ -306,8 +306,7 @@ button:hover {
   width: 12px;
   height: 12px;
   top: 2px;
-  left: 5px;
-  right: 5px;
+  margin: 0px 5px 0px 5px;
   background: url(/img/rt-icons.png) -258px -146px;
 }
 
@@ -316,8 +315,7 @@ button:hover {
   width: 12px;
   height: 14px;
   top: 2px;
-  left: 5px;
-  right: 5px;
+  margin: 0px 5px 0px 5px;
   background: url(/img/rt-icons.png) -290px -145px;
 }
 

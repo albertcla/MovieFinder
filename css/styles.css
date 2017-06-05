@@ -26,19 +26,19 @@ nav div.wrapper {
 main {
   flex: 1 0 0;
   justify-content: center;
-  overflow: hidden;
+  /*overflow: hidden;*/
+  overflow-y: auto;
 }
 
 aside {
   flex: 1;
-  overflow-y: auto;
+  /*overflow-y: auto;*/
   padding-right: 20px;
 }
 
 section {
   flex: 3.5;
 }
-
 
 h1 {
   display: none;
@@ -170,7 +170,7 @@ button:hover {
 }
 
 .results {
-  overflow-y: auto;
+  /*overflow-y: auto;*/
   flex-wrap: wrap;
   justify-content: flex-start;
 }

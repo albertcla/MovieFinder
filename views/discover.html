@@ -1,17 +1,17 @@
 <div class="menu row spc-bt">
-  <span><b>{{Finder.pelis.length}} / {{Finder.total.results}}</b> películas encontradas</span>
+  <span><strong>{{Finder.pelis.length}}</strong><strong ng-hide="Finder.type == 'favoritos' || Finder.type == 'pendientes'"> / {{Finder.total.results}}</strong> películas <span ng-hide="Finder.type == 'favoritos' || Finder.type == 'pendientes'">encontradas</span><span ng-if="Finder.type == 'favoritos'">favoritas</span><span ng-if="Finder.type == 'pendientes'">pendientes</span></span>
 </div>
 
 <div class="results row">
   <div class="preview" ng-repeat="peli in Finder.pelis track by peli.id">
-    <a href="#"><img src="{{peli.coverPath}}" alt="movie prview" class="cover" ng-click="Finder.searchDetails(peli.id)"></a>
+    <a href="#"><img ng-src="{{peli.coverPath}}" alt="movie prview" class="cover" ng-click="Finder.searchDetails(peli.id)"></a>
     <div class="rate spc-ar">
-      <span><i class="fa fa-heart" aria-hidden="true"></i></span>
+      <span><a href="#" ng-click="Finder.toggleTo(peli, 'favoritos')" ng-class="{on: Finder.favoritos.indexOf(peli) != -1)}"><i class="fa fa-heart" aria-hidden="true"></i></a></span>
       <span><i class="fa fa-star-o" aria-hidden="true"></i> {{peli.voteAvg}} / <i class="fa fa-users" aria-hidden="true"></i> {{peli.voteCnt}} votos</span>
-      <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+      <a href="#" ng-click="Finder.toggleTo(peli, 'pendientes')" ng-class="{on: Finder.inList(peli,'pendientes')}"><span><i class="fa fa-clock-o" aria-hidden="true"></i></span></a>
     </div>
   </div>
-  <div class="plus" ng-click="Finder.nextPage(Finder.type)" ng-if="Finder.page < Finder.total.pages">
+  <div class="plus" ng-click="Finder.nextPage(Finder.type)" ng-if="Finder.page < Finder.total.pages && (Finder.type != favoritos || Finder.type != pendientes)">
     <a href="#"><img src="/img/img_trans.gif" alt="Plus"></a>
   </div>
 </div>
@@ -27,7 +27,7 @@
     </div>
     <div class="description col spc-bt">
       <div class="row">
-        <img class="cover" src="{{Finder.details.cover}}">
+        <img class="cover" ng-src="{{Finder.details.cover}}">
         <div class="col">
           <div class="row spc-bt">
             <h3>Sinopsis</h3><span>{{Finder.details.duration}}</span>

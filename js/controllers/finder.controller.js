@@ -5,10 +5,10 @@
     .module('MovieFinder')
     .controller('FinderController', FinderController);
 
-  FinderController.$inject = ['TMDbFactory'];
+  FinderController.$inject = ['TMDbFactory', 'MemoryFactory'];
 
   /* @ngInject */
-  function FinderController(TMDbFactory) {
+  function FinderController(TMDbFactory, MemoryFactory) {
     var vm = this;
     vm.defaultFilter = defaultFilter;
     vm.searchPack = searchPack;
@@ -17,14 +17,20 @@
     vm.nextPage = nextPage;
     vm.searchMovies = searchMovies;
     vm.searchDetails = searchDetails;
+    vm.toggleTo = toggleTo;
+    vm.getList = getList;
     vm.idToggle = idToggle;
     vm.changeFlag = changeFlag;
 
     vm.pelis = [];
+    vm.favoritos = [];
+    vm.pendientes = [];
     vm.page = 1;
     vm.genres = [];
     vm.singleFlag = false;
     vm.discoverFlag = true;
+    vm.favoritosFlag = false;
+    vm.pendientesFlag = false;
     vm.type = 'discover';
 
     activate();
@@ -44,9 +50,11 @@
       vm.pelis = [];
       searchPack(vm.dateMax, vm.valMax, vm.adult, vm.genres, vm.page);
     }
+    
+//    The Movie Database
 
     function searchPack(dateMax, valMax, adult, genres, page) {
-      if (vm.type == 'upcoming' || vm.type == 'query' || vm.type == 'latest') {
+      if (vm.type == 'upcoming' || vm.type == 'query' || vm.type == 'latest' || vm.type == 'favoritos' || vm.type == 'pendientes') {
         vm.pelis = [];
         vm.type = 'discover';
       }
@@ -63,7 +71,7 @@
     }
 
     function searchLatest(page) {
-      if (vm.type == 'discover' || vm.type == 'query' || vm.type == 'upcoming') {
+      if (vm.type == 'discover' || vm.type == 'query' || vm.type == 'upcoming' || vm.type == 'favoritos' || vm.type == 'pendientes') {
         vm.pelis = [];
         vm.type = 'latest';
       }
@@ -80,7 +88,7 @@
     }
 
     function searchUpcoming(page) {
-      if (vm.type == 'discover' || vm.type == 'query' || vm.type == 'latest') {
+      if (vm.type == 'discover' || vm.type == 'query' || vm.type == 'latest' || vm.type == 'favoritos' || vm.type == 'pendientes') {
         vm.pelis = [];
         vm.type = 'upcoming';
       }
@@ -110,7 +118,7 @@
     }
 
     function searchMovies(query, adult, page) {
-      if (vm.type == 'discover' || vm.type == 'upcoming' || vm.type == '') {
+      if (vm.type == 'discover' || vm.type == 'upcoming' || vm.type == 'latest' || vm.type == 'favoritos' || vm.type == 'pendientes') {
         vm.pelis = [];
         vm.type = 'query';
       }
@@ -136,6 +144,55 @@
             console.log(error);
           })
     }
+    
+//    localStorage
+    
+    function addTo(item, list) {
+      vm[list].push(item);
+    }
+    
+    function removeFrom(item,list) {
+      vm[list].forEach(function(element,index) {
+        if (element.id == item.id) {
+          vm[list].splice(index,1);
+        };
+      });
+    }
+    
+    function toggleTo(item,list) {
+      inList(item,list);
+      if (vm[list + 'Flag']) {
+        removeFrom(item,list);
+      } else {
+        addTo(item, list);
+      }
+      MemoryFactory.save(list, vm[list]);
+      if (vm.type == 'favoritos' || vm.type == 'pendientes') {
+        vm.pelis = vm[list];
+      }
+    }
+    
+    function getList(list) {
+      vm.type = list;
+      vm.pelis = [];
+      vm.pelis = MemoryFactory.get(list);
+    }
+    
+    function inList(item,list) {
+      if (list in localStorage) {
+        vm[list] = MemoryFactory.get(list);
+      } else {
+        vm[list] = [];
+      }
+      vm[list + 'Flag'] = false;
+      vm[list].forEach(function (element) {
+        if (element.id == item.id) {
+          vm[list + 'Flag'] = true;
+        };
+      });
+    }
+    
+//    Controller functions
 
     function idToggle(id) {
       if (vm.genres.indexOf(id) == -1) {

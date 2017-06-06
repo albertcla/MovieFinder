@@ -65,6 +65,10 @@ li {
   padding: 0px 13px;
 }
 
+li a {
+  padding: 10px;
+}
+
 li a:hover {
   color: #ffffff;
 }
@@ -132,7 +136,7 @@ button:hover {
 }
 
 .active {
-  border-color: #2883d8;
+  border: 1px solid #2883d8;
 }
 
 /*Clases*/

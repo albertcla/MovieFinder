@@ -170,6 +170,7 @@
       if (vm.type == 'favoritos' || vm.type == 'pendientes') {
         vm.pelis = vm[list];
       }
+      vm[list + 'Flag'] = false;
     }
     
     function getList(list) {

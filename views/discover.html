@@ -6,7 +6,7 @@
   <div class="preview" ng-repeat="peli in Finder.pelis track by peli.id">
     <a href="#"><img ng-src="{{peli.coverPath}}" alt="movie prview" class="cover" ng-click="Finder.searchDetails(peli.id)"></a>
     <div class="rate spc-ar">
-      <span><a href="#" ng-click="Finder.toggleTo(peli, 'favoritos')" ng-class="{on: Finder.favoritos.indexOf(peli) != -1)}"><i class="fa fa-heart" aria-hidden="true"></i></a></span>
+      <span><a href="#" ng-click="Finder.toggleTo(peli, 'favoritos')" ng-class="{on: Finder.favoritos.indexOf(peli) != -1}"><i class="fa fa-heart" aria-hidden="true"></i></a></span>
       <span><i class="fa fa-star-o" aria-hidden="true"></i> {{peli.voteAvg}} / <i class="fa fa-users" aria-hidden="true"></i> {{peli.voteCnt}} votos</span>
       <a href="#" ng-click="Finder.toggleTo(peli, 'pendientes')" ng-class="{on: Finder.inList(peli,'pendientes')}"><span><i class="fa fa-clock-o" aria-hidden="true"></i></span></a>
     </div>

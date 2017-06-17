@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="MovieFinder">
+
 <head>
   <meta charset="UTF-8">
   <title>Movie-Finder</title>
@@ -15,22 +16,22 @@
   <nav class="row" ng-include="'/views/partials/nav.html'"></nav>
 
   <main class="row">
-   
+
     <div class="wrapper row">
-     
+
       <aside class="col" ng-include="'/views/partials/sidebar.html'"></aside>
 
       <section class="col" ng-view></section>
-      
+
     </div>
-    
+
   </main>
 
 
   <!--Dependencias-->
   <script src="libs/angular.js"></script>
   <script src="libs/angular-route.js"></script>
-  
+
   <!--App-->
   <script src="js/app.js"></script>
   <!--Factorias-->
@@ -40,4 +41,5 @@
   <script src="js/controllers/finder.controller.js"></script>
 
 </body>
+
 </html>

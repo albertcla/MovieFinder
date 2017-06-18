@@ -15,7 +15,7 @@
     .when('/discover', {
       controller: 'FinderController',
       controllerAs: 'Discover',
-      templateUrl: '/views/discover.html'
+      templateUrl: 'views/discover.html'
     })
     .otherwise({
         redirectTo: '/'

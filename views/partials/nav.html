@@ -1,5 +1,5 @@
 <div class="wrapper row spc-bt">
-  <a href="/"><img id="logo" src="img/logo.png" alt="Logo"></a>
+  <a href="/"><img id="logo" src="../../img/Logo.png" alt="Logo"></a>
   <ul class="contenedor">
     <li><a href="#" ng-click="Finder.searchPack(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres,Finder.page)" ng-class="{active: Finder.type == 'discover'}">Discover</a></li>
     <li><a href="#" ng-click="Finder.searchLatest(Finder.page)" ng-class="{active: Finder.type == 'latest'}">Últimas Pelis</a></li>
@@ -11,7 +11,7 @@
     <li><a href="#" ng-click="Finder.getList('pendientes')" ng-class="{active: Finder.type == 'pendientes'}">Pendientes</a></li>
   </ul>
   <div id="search">
-    <a href="#"><img src="img/Search_Icon.png" alt="Lupa" ng-click="Finder.searchMovies(Finder.query,Finder.adult)"></a>
+    <a href="#"><img src="../../img/Search_Icon.png" alt="Lupa" ng-click="Finder.searchMovies(Finder.query,Finder.adult)"></a>
     <input type="search" name="film-search" placeholder="Encuentra tu película favorita" ng-model="Finder.query">
   </div>
 </div>

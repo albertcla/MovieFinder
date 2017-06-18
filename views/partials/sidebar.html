@@ -1,5 +1,5 @@
 <div class="menu row spc-bt">
-  <img src="img/Filter_Icon.png" alt="Filter Icon">
+  <img src="../../img/Filter_Icon.png" alt="Filter Icon">
   <a href="#" class="btn" ng-click="Finder.searchPack(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres,Finder.page)">Filtrar</a>
   <a href="#" class="btn" ng-click="Finder.defaultFilter();">Borrar</a>
 </div>
@@ -16,7 +16,7 @@
   <input type="range" id="imdb" min="0" max="9" value="9" ng-model="Finder.valMax" ng-model-options="{ debounce: 1000 }" ng-change="Finder.searchPack(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres,Finder.page)">
   <div class="filter row spc-bt">
     <b>Incluir Adultos</b>
-    <p><img src="/img/adult_.png" alt="adults_logo"><input type="checkbox" checked ng-model="Finder.adult" ng-change="Finder.searchPack(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres,Finder.page)"></p>
+    <p><img src="../../img/adult_.png" alt="adults_logo"><input type="checkbox" checked ng-model="Finder.adult" ng-change="Finder.searchPack(Finder.dateMax,Finder.valMax,Finder.adult,Finder.genres,Finder.page)"></p>
   </div>
   
   
